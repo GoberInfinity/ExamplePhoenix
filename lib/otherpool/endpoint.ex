@@ -37,9 +37,6 @@ defmodule Otherpool.Endpoint do
     store: :cookie,
     key: "_otherpool_key",
     signing_salt: "HaK6Xi0E"
-
-  # Plug CORSP
-  plug CORSPlug
     
   plug Otherpool.Router
 end
