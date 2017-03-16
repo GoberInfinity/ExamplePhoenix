@@ -10,13 +10,12 @@ defmodule Otherpool.Router do
   end
 
   pipeline :api do
-    plug :accepts, ["json"]
+    plug :accepts, ["json-api"]
   end
 
-  scope "/", Otherpool do
-    pipe_through :browser # Use the default browser stack
-
-    get "/", PageController, :index
+  scope "/api", Otherpool do
+    pipe_through :api
+    resources "/dummies", DummyController
   end
 
   # Other scopes may use custom stacks.
