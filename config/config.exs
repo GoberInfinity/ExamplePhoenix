@@ -26,6 +26,9 @@ config :logger, :console,
 config :phoenix, :format_encoders,
   "json-api": Poison
 
+config :phoenix, PhoenixExample.Endpoint,
+  render_errors: [view: PhoenixExample.ErrorView, accepts: ~w(html json json-api)]
+
 config :mime, :types, %{
   "application/vnd.api+json" => ["json-api"]
 }
