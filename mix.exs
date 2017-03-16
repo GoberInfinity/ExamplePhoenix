@@ -39,6 +39,8 @@ defmodule Otherpool.Mixfile do
      {:gettext, "~> 0.11"},
      # Added library for formatting data structures
      {:ja_serializer, "~> 0.12.0"},
+     # Added library for cross
+     {:cors_plug, "~> 1.2"},
      {:cowboy, "~> 1.0"}]
   end
 

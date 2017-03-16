@@ -23,3 +23,7 @@ alias Otherpool.Dummy
         }
     
     ] |> Enum.each(&Repo.insert!(&1))
+
+
+
+#curl -H "Content-Type: application/json" -X POST -d '{"Dummy": {"age": 23, "name": "Jeff Baird"}}'   http://localhost:4000/api/dummies
