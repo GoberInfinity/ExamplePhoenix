@@ -9,3 +9,17 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+alias Otherpool.Repo
+alias Otherpool.Dummy
+
+[
+    %Dummy{
+        name: "Pedro",
+        age: 21
+        },
+    %Dummy{
+        name: "Armando",
+        age: 19
+        }
+    
+    ] |> Enum.each(&Repo.insert!(&1))
