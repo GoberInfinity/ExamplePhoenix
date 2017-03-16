@@ -21,7 +21,8 @@ defmodule Otherpool.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Otherpool do
-  #   pipe_through :api
-  # end
+   scope "/api", Otherpool do
+     pipe_through :api
+     resources "/users", UserController, except: [:new, :edit]
+   end
 end
