@@ -11,6 +11,10 @@ defmodule Otherpool.DummyController do
     render(conn, "index.json-api", data: dummies)
   end
 
+  def create(conn, dummy_params) do
+  changeset = Dummy.changeset(%Dummy{}, dummy_params)
+  end
+      
   def create(conn, %{"data" => _data = %{"type" => "dummies", "attributes" => dummy_params}})do
       create(conn, %{"data" => _data = %{"type" => "dummy", "attributes" => dummy_params}})
   end 
