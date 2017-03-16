@@ -11,8 +11,8 @@ defmodule Otherpool.DummyController do
     render(conn, "index.json-api", data: dummies)
   end
 
-  def create(conn, dummy_params) do
-      changeset = Dummy.changeset(%Dummy{}, dummy_params)
+  def create(conn, %{"data" => data = %{"type" => "dummy", "attributes" => _dummy_params}}) do
+    changeset = Dummy.changeset(%Dummy{}, Params.to_attributes(data))
 
     case Repo.insert(changeset) do
       {:ok, dummy} ->
