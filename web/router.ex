@@ -22,5 +22,9 @@ defmodule Otherpool.Router do
    scope "/api", Otherpool do
      pipe_through :api
      resources "/users", UserController, except: [:new, :edit]
+     resources "/dealers", DealController, except: [:new, :edit]
+     resources "/users", UserController do
+      post "/dealers", DealController, :add_dealer
+    end   
    end
 end

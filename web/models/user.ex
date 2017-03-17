@@ -4,7 +4,7 @@ defmodule Otherpool.User do
   schema "users" do
     field :fullname, :string
     field :email, :string
-
+    has_many :dealers, Otherpool.Deal 
     timestamps()
   end
 

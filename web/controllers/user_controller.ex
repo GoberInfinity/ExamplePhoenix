@@ -23,7 +23,7 @@ defmodule Otherpool.UserController do
         |> render(Otherpool.ChangesetView, "error.json", changeset: changeset)
     end
   end
-
+    
   def show(conn, %{"id" => id}) do
     user = Repo.get!(User, id)
     render(conn, "show.json", user: user)
