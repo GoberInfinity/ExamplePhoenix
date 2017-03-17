@@ -27,7 +27,7 @@ defmodule Otherpool.DealController do
     
     def add_dealer(conn, %{"deal" => deal_params, "user_id" => user_id}) do
         changeset = Deal.changeset(%Deal{}, Map.put(deal_params, "user_id", user_id))
-        Logger.info "ESTO ES PORQUE PASO A ADD_DEALER"
+        Logger.info "add_dealer"
 
   case Repo.insert(changeset) do
       {:ok, deal} ->
