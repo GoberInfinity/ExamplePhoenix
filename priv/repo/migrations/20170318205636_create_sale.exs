@@ -1,8 +1,8 @@
-defmodule Otherpool.Repo.Migrations.CreateSaleDetaill do
+defmodule Otherpool.Repo.Migrations.CreateSale do
   use Ecto.Migration
 
   def change do
-    create table(:sale_detaills) do
+    create table(:sales) do
       add :order_date, :date
       add :due_date, :date
       add :subtotal, :integer
@@ -11,8 +11,8 @@ defmodule Otherpool.Repo.Migrations.CreateSaleDetaill do
 
       timestamps()
     end
-    create index(:sale_detaills, [:sale_type_id])
-    create index(:sale_detaills, [:userp_id])
+    create index(:sales, [:sale_type_id])
+    create index(:sales, [:userp_id])
 
   end
 end

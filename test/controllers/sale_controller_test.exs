@@ -21,7 +21,8 @@ defmodule Otherpool.SaleControllerTest do
       "order_date" => sale.order_date,
       "due_date" => sale.due_date,
       "subtotal" => sale.subtotal,
-      "sale_type_id" => sale.sale_type_id}
+      "sale_type_id" => sale.sale_type_id,
+      "userp_id" => sale.userp_id}
   end
 
   test "renders page not found when id is nonexistent", %{conn: conn} do
