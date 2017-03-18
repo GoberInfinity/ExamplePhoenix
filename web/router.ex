@@ -13,11 +13,6 @@ defmodule Otherpool.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", Otherpool do
-    pipe_through :api
-    resources "/dummies", DummyController
-  end
-
   # Other scopes may use custom stacks.
    scope "/api", Otherpool do
      pipe_through :api
