@@ -1,12 +1,12 @@
-defmodule Otherpool.Sale do
+defmodule Otherpool.Saledetaill do
   use Otherpool.Web, :model
 
-  schema "sales" do
+  schema "saledetaills" do
     field :order_date, Ecto.Date
     field :due_date, Ecto.Date
-    field :subtotal, :integer 
-    field :userp_id, :integer
-    belongs_to :sale_type, Otherpool.SaleType,  foreign_key: :sale_type_id
+    field :subtotal, :integer
+    belongs_to :sale_type, Otherpool.SaleType,foreign_key: :sale_type_id
+    belongs_to :userp, Otherpool.Userp,foreign_key: :userp_id
 
     timestamps()
   end
@@ -16,7 +16,7 @@ defmodule Otherpool.Sale do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:order_date, :due_date, :subtotal,:userp_id,:sale_type_id])
+    |> cast(params, [:order_date, :due_date, :subtotal,:sale_type_id,:userp_id])
     |> validate_required([:order_date, :due_date, :subtotal])
   end
 end
