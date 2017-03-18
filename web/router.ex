@@ -20,6 +20,14 @@ defmodule Otherpool.Router do
      resources "/dealers", DealController, except: [:new, :edit]
      resources "/users", UserController do
       post "/dealers", DealController, :add_dealer
+         
+    resources "/userps", UserpController, except: [:new, :edit]
+resources "/user_types", User_TypeController, except: [:new, :edit]
+resources "/person_companies", Person_CompanyController, except: [:new, :edit]
+resources "/person_phones", Person_PhoneController, except: [:new, :edit]
+resources "/persons", PersonController, except: [:new, :edit]
+resources "/sale_types", Sale_TypeController, except: [:new, :edit]
+resources "/sales", SaleController, except: [:new, :edit]     
     end   
    end
 end
