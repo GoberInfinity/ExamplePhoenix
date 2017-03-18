@@ -4,9 +4,9 @@ defmodule Otherpool.Sale do
   schema "sales" do
     field :order_date, Ecto.Date
     field :due_date, Ecto.Date
-    field :subtotal, :integer
-    belongs_to :sale_type, Otherpool.SaleType, foreign_key: :sale_type_id 
-    belongs_to :userp, Otherpool.Userp, foreign_key: :userp_id
+    field :subtotal, :integer 
+    belongs_to :userp, Otherpool.Userp, foreign_key: :userps_id
+    belongs_to :sale_type, Otherpool.SaleType
 
     timestamps()
   end
