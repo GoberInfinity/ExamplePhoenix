@@ -3,7 +3,7 @@ defmodule Otherpool.Person_Company do
 
   schema "person_companies" do
     field :name_company, :string
-    belongs_to :person, Otherpool.Person
+    belongs_to :person, Otherpool.Person, foreign_key: :person_id
 
     timestamps()
   end
@@ -13,7 +13,7 @@ defmodule Otherpool.Person_Company do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:name_company])
+    |> cast(params, [:name_company,:person_id])
     |> validate_required([:name_company])
   end
 end

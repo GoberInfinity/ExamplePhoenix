@@ -3,7 +3,7 @@ defmodule Otherpool.Person_Phone do
 
   schema "person_phones" do
     field :phone_number, :integer
-    belongs_to :person, Otherpool.Person
+    belongs_to :person, Otherpool.Person, foreign_key: :person_id
 
     timestamps()
   end
@@ -13,7 +13,7 @@ defmodule Otherpool.Person_Phone do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:phone_number])
+    |> cast(params, [:phone_number,:person_id])
     |> validate_required([:phone_number])
   end
 end
