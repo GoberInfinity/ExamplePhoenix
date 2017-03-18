@@ -9,13 +9,19 @@ defmodule Otherpool.Userp do
 
     timestamps()
   end
-
-  @doc """
-  Builds a changeset based on the `struct` and `params`.
-  """
+      
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:password_hash, :person_id,:type_id])
-    |> validate_required([:password_hash])
+    |> cast(params, [:password, :person_id,:type_id])
+    |> hash_password
   end
+    
+    defp hash_password(changeset) do  
+  if password = get_change(changeset, :password) do
+    changeset
+    |> put_change(:password_hash, Comeonin.Bcrypt.hashpwsalt(password))
+  else
+    changeset
+  end
+    end        
 end

@@ -18,7 +18,7 @@ defmodule Otherpool.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {Otherpool, []},
-     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
+     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :comeonin, :gettext,
                     :phoenix_ecto, :postgrex]]
   end
 
@@ -41,6 +41,8 @@ defmodule Otherpool.Mixfile do
      {:ja_serializer, "~> 0.12.0"},
      # Added library for cross
      {:cors_plug, "~> 1.2"},
+     # Added library for hash the pasword
+     {:comeonin, "~> 3.0"},    
      {:cowboy, "~> 1.0"}]
   end
 

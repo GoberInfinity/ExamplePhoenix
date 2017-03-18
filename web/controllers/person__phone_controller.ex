@@ -1,4 +1,5 @@
 defmodule Otherpool.Person_PhoneController do
+    require Logger
   use Otherpool.Web, :controller
 
   alias Otherpool.Person_Phone
@@ -6,11 +7,13 @@ defmodule Otherpool.Person_PhoneController do
   def index(conn, _params) do
     person_phones = Repo.all(Person_Phone)
     render(conn, "index.json", person_phones: person_phones)
+    Logger.info "Esto paso por el show"
+  
   end
 
   def create(conn, %{"person__phone" => person__phone_params}) do
     changeset = Person_Phone.changeset(%Person_Phone{}, person__phone_params)
-
+      
     case Repo.insert(changeset) do
       {:ok, person__phone} ->
         conn
