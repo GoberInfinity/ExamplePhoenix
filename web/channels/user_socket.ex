@@ -3,7 +3,7 @@ defmodule Otherpool.UserSocket do
 
   ## Channels
   # channel "room:*", Otherpool.RoomChannel
-
+  channel "person", Otherpool.PersonChannel
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket,
 	timeout: 45_000

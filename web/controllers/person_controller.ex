@@ -13,6 +13,7 @@ defmodule Otherpool.PersonController do
 
     case Repo.insert(changeset) do
       {:ok, person} ->
+        Otherpool.PersonChannel.broadcast_change(person)  
         conn
         |> put_status(:created)
         |> put_resp_header("location", person_path(conn, :show, person))

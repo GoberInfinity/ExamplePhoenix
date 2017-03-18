@@ -1,0 +1,21 @@
+{
+  "name": "otherpoolapi",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Gober <reyesfragosoroberto@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/GoberInfinity/ExamplePhoenix",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~3.2.0"
+  }
+}
