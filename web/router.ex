@@ -28,10 +28,9 @@ defmodule Otherpool.Router do
      resources "/person_companies", Person_CompanyController, except: [:new, :edit]
      resources "/sale_types", Sale_TypeController, except: [:new, :edit]
      resources "/user_types", User_TypeController, except: [:new, :edit]
-     resources "/persons", PersonController
-        options "/persons", PersonController, :options
-        options "/persons/:id", PersonController, :options
-       , except: [:new, :edit]   
+     resources "/persons", PersonController, except: [:new, :edit]   
+     options   "/persons", PersonController, :options
+     options   "/persons/:id", PersonController, :options   
      resources "/person_phones", Person_PhoneController, except: [:new, :edit]
      resources "/sales", SaleController, except: [:new, :edit]   
      resources "/users", UserController do
