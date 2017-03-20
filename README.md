@@ -1,8 +1,8 @@
 # ExamplePhoenix
-A full JSON API using phoenix as a backend and postgresql as database; and a channel to view in real time a new users on database.
+A full JSON API using phoenix as backend, and a channel to view the new users in the database in real time.
 
 ## Introduction
-To build this application I consider Cross-origin resource sharing (CORS) that allows a web page to be requested from another domain outside the domain from which the resource originated, and internally for security the user's password is stored with a hash, for the live reload of the new user's it used phoenix's channels that allow us to easily add soft-realtime features to our applications. 
+To build this application I considered CORS which allows a web page to be requested from another domain outside the domain from which the resource originated, and for internal security the user's password will be kept in a hash; for the loading in real time I used the phoenix channel, which allowed me to add this features to the app.
 
 ## Prerequisities
 * Install ["Elixir"](http://elixir-lang.org/install.html) <br />
@@ -13,7 +13,7 @@ To build this application I consider Cross-origin resource sharing (CORS) that a
 To use only in you local enviroment first clone this repository
 1. First clone the repository: ```git clone https://github.com/GoberInfinity/ExamplePhoenix.git ```
 2. Change to the new directory: ```cd ExamplePhoenix```
-3. Create the database ```mix ecto.create``` (If you have error here, check the database configuration at config/dev.exs) 
+3. Create the database ```mix ecto.create``` (If you have an error here, check the database configuration at config/dev.exs) 
 4. Install the dependences ```mix deps.get```
 5. Finally run the local server ```mix phoenix.server```
 
@@ -42,10 +42,10 @@ Channel: To view the channel, go to : ```https://otherpoolapi.herokuapp.com/```,
 1. Modeled the database in paper.
 2. Added the skeleton for deployment on Heroku.
 3. Created the models and the urls for the api.
-4. Added libaries for CORS, hashing and serializer.
+4. Added libraries for CORS, hashing and serializer.
 5. Failed to make a post using a serializer.
 6. Deleted serializer library.
-5. Finally deployment.
+5. Final deployment.
 
 ## Authors
 * **Reyes Fragoso Roberto** - [Portfolio](http://robertoreyes.me)
