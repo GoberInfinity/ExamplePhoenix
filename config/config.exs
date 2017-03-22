@@ -13,9 +13,21 @@ config :otherpool,
 config :otherpool, Otherpool.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "IZftWfmdhQ8UkDZ2d80BSZ1usZecYgI0rwAUvefkwhekEvK+xngs8i6TChmEEI3b",
-  render_errors: [view: Otherpool.ErrorView, accepts: ~w(html json)],
+  #render_errors: [view: Otherpool.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Otherpool.PubSub,
            adapter: Phoenix.PubSub.PG2]
+
+#Configuration for json errors
+config :phoenix, PhoenixExample.Endpoint,
+  render_errors: [view: PhoenixExample.ErrorView, accepts: ~w(html json json-api)]
+
+#Configure the json-api serializer
+config :phoenix, :format_encoders,
+  "json-api": Poison
+
+config :mime, :types, %{
+  "application/vnd.api+json" => ["json-api"]
+}
 
 # Configures Elixir's Logger
 config :logger, :console,

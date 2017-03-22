@@ -10,7 +10,9 @@ defmodule Otherpool.Router do
   end
 
   pipeline :api do
-    plug :accepts, ["json"]
+    plug :accepts, ["json-api"]
+    plug JaSerializer.ContentTypeNegotiation
+    plug JaSerializer.Deserializer
   end
 
   scope "/", Otherpool do
@@ -22,6 +24,7 @@ defmodule Otherpool.Router do
    scope "/api", Otherpool do
      pipe_through :api
      resources "/users", UserController, except: [:new, :edit]
+       resources "/checkboxes", CheckboxController, except: [:new, :edit]
      resources "/dealers", DealController, except: [:new, :edit]
      resources "/sales", SaleController, except: [:new, :edit]  
      resources "/userps", UserpController, except: [:new, :edit]

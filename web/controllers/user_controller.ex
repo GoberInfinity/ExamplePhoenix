@@ -5,11 +5,15 @@ defmodule Otherpool.UserController do
 
   def index(conn, _params) do
     users = Repo.all(User)
-    render(conn, "index.json", users: users)
+    #render(conn, "index.json", users: users)
+      
+      render conn, "index.json-api", data: Repo.all(User)
   end
 
-  def create(conn, %{"user" => user_params}) do
-    changeset = User.changeset(%User{}, user_params)
+    #TODO- Make a better post and check all the others methods, check checkbox_controller
+  def create(conn, %{"data" => data}) do
+    attrs = JaSerializer.Params.to_attributes(data)
+    changeset = User.changeset(%User{}, attrs)
 
     case Repo.insert(changeset) do
       {:ok, user} ->
