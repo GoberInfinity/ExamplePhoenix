@@ -20,12 +20,12 @@ To use only in you local enviroment first clone this repository
 ## Deployment
 Gets: You can get the json from the api typing:
 ``` bash
-~ curl -H "Content-Type: application/json" https://otherpoolapi.herokuapp.com/persons
-~ curl -H "Content-Type: application/json" https://otherpoolapi.herokuapp.com/person_phones
-~ curl -H "Content-Type: application/json" https://otherpoolapi.herokuapp.com/user_types
-~ curl -H "Content-Type: application/json" https://otherpoolapi.herokuapp.com/userps
-~ curl -H "Content-Type: application/json" https://otherpoolapi.herokuapp.com/sale_types
-~ curl -H "Content-Type: application/json" https://otherpoolapi.herokuapp.com/saledetaills
+~ curl -H "Content-Type: application/json" https://otherpoolapi.herokuapp.com/api/persons 
+~ curl -H "Content-Type: application/json" https://otherpoolapi.herokuapp.com/api/person_phones
+~ curl -H "Content-Type: application/json" https://otherpoolapi.herokuapp.com/api/user_types
+~ curl -H "Content-Type: application/json" https://otherpoolapi.herokuapp.com/api/userps
+~ curl -H "Content-Type: application/json" https://otherpoolapi.herokuapp.com/api/sale_types
+~ curl -H "Content-Type: application/json" https://otherpoolapi.herokuapp.com/api/saledetaills
 ```
 Posts: You can post data from the api typing:
 ``` bash
